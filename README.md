@@ -17,4 +17,4 @@ Start service
 
 Finally! you now have hapi hello world source code and ready for start your project Have fun :) !!!
 
-The app is now accessible on `http://localhost:3000`
+The app is now accessible on `http://localhost:8000`
