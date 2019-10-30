@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
+const sleep = require('await-sleep');
 
 const init = async () => {
 
@@ -24,6 +25,18 @@ const init = async () => {
     handler: (request, h) => {
 
       return `Hello ${request.params.key.toUpperCase()}!`;
+    }
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/sleep/{duration}',
+    handler: async (request, h) => {
+      const { duration } = request.params;
+
+      await sleep(duration);
+
+      return `Sleep! ${duration} ms`;
     }
   });
 
